@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+
+body{
+  font-family: "Urbanist";
+  background: #0d6efd;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+
+/*_______________________________________________________CARRITO_____________________________________________________________*/
+
+.carrito{
+  padding-top: 30px;
+  background-color: #fff;
+  display: grid;
+  height: 600px;
+}
+        
+.carrito .carrito-row, .row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: left;
+  margin-right: 50px;
+  text-align:left;
+}
+
+.foto-detalle{
+  width: 400px;
+  object-fit: fill;
+  margin-right: 20%;
+}
+
+.row-foto{
+  justify-content: center;
+  padding:20px 20px 20px 20px;
+  width: 400px;
+}
+        
+.row h2{
+  position: absolute;
+  color: #000000;
+}
+.row .p-cart{
+  margin-top: 60px;
+  color: #000000;
+  text-align: left;
+}
+
+.row h3{
+  margin-top: 300px;
+  position:absolute;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.buttoncart{
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 250px;
+
+  background-color: #3a3a3a;
+  border: none;
+  color: #fff;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.buttoncart:hover{
+  background-color: #57DFB7;
+  color: #000000;
+}
+
+@media(max-width: 1050px){
+  .row img{
+    width: 400px;
+    height: 400px;
+  }
+
+  .cart .row{
+    height: 600px;
+  }
+
+  .row h3{
+    margin-top: 400px;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  .row button{
+    margin-top: 400px;
+    margin-left: 200px;
+  } 
+}    
+
+@media(max-width: 768px){
+.row img{
+    width: 400px;
+    height: 300px;
+}
+
+.cart{
+    padding: 10px;
+    margin: 0;
+    background-color: #fff;
+    display: grid;
+    height: 700px;
+}
+        
+.cart .row{
+    flex-direction:column;
+}
+
+.row p{
+    text-align:justify;
+    margin-right: 20px;
+}
+
+.row h3{
+    position:absolute;
+    margin-top: 300px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.row button{
+    margin-top: 300px;
+    margin-left: 200px;
+    height: 40px;
+    font-size: 18px; 
+  } 
+}
+/*____________________________________Registro_________________________________________________________*/
+
+.main-register{
+  display: grid;
+  width: auto;
+  height: 900px;
+  background-color: #fff;
+}
+
+.box-register{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  height: 52rem;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.625rem;
+}
+
+.box-register h2,p {
+  margin: 0 0 1.875rem;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.box-form li{
+  list-style: none;
+  padding-bottom: 20px;
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+.box-form label{
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  padding: 0.625rem 0;
+  font-size: 1rem;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.box-form .input-registro{
+  width: 50%;
+  padding: 0.625rem 0;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.062rem;
+  margin-bottom: 1.875rem;
+  border: none;
+  border-bottom: 0.065rem solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.box-form .input-registro::placeholder{
+  color: #57DFB7;
+  font-size: 12px;
+  text-align: center;
+}
+
+.box-register .input-registro{
+  margin: -20px;
+}
+
+.box-form .button-register{
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 43%;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3a3a3a;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.button-register:hover{
+  background-color: #57DFB7;
+  color: #000000;
+}
+
+@media(max-width: 768px){
+  .box-register{
+    position: absolute;
+    top: 90%;
+    width: 21rem;
+    height: 47rem;
+  }
+  
+  .box-register .box-form .input-registro {
+    margin-left: 80px;
+    font-size: 15px;
+  }
+
+  .box-register .box-form label {
+    font-size: 10px;
+  }
+
+  .box-form .button-register{
+    font-size: 10px;
+    margin-top: 30px;
+    margin-left: 40%;
+  }
+}
+/*____________________________________LOGiN_________________________________________________________*/
+
+.main-login{
+  width: auto;
+  height: 450px;
+  background-color: #fff;
+}
+
+.box-login {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.625rem;
+}
+.box-login h2 {
+  margin: 0 0 1.875rem;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.box-login li {
+  position: relative;
+  list-style: none;
+}
+.form-login li>input {
+  width: 100%;
+  padding: 0.625rem 0;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.062rem;
+  margin-bottom: 1.875rem;
+  border: none;
+  border-bottom: 0.065rem solid #fff;
+  outline: none;
+  background: transparent;
+}
+.form-login li>label {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0.625rem 0;
+  font-size: 1rem;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-login input[type="submit"] {
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #3a3a3a;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  border-radius: 0.312rem;
+  font-size: 1rem;
+}
+.form-login input[type="submit"]:hover {
+  background-color: #57DFB7;
+  color: #000000;
+}
+  /*________________________________________________*media query_____________________________________________________________*/
+
+  @media(max-width:768px){
+  .main-login{
+    display: grid;
+    width: auto;
+    height: 450px;
+    background-color: #fff;
+    padding: 0;
+  }
+
+  .box-login {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20rem;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0.625rem;
+    margin-top: 5px;
+  }
+}        
+
+/*________________________________________NOSOTROS______________________________*/
+.nosotros{
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+.nosotros-title{
+  padding: 10px;
+  margin-right:0;
+  padding-right: 200px;
+}
+
+.nosotros-title p{
+  padding-left: 30px;
+  font-size: 15px;
+  text-align: left;
+  color: #000000;
+}
+
+.nosotros-title h2{
+  padding-left: 20px;
+  font-size: 30px;
+}
+
+.row-card{
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 380px 500px;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.card{
+  display: flex;
+  flex-direction:column;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 8px 0px #d4d4d4;
+  transition: 0.5s;
+  text-align: center;
+  margin-top: 15px;
+  padding: 5px;
+  height: 350px;
+}
+
+.card:hover{
+  border: 1px solid #007bff;
+}
+
+.card-foto{
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin:-30px 100px 0px 120px ;
+  border-left: 3px solid #ddd;
+  border-right: 3px solid #ddd;
+  border-top: 3px solid #007bff;
+  border-bottom: 3px solid #007bff;
+}
+
+.card-foto img{
+  max-width: 150px;
+}
+
+.card h5{
+  font-size: 20px;
+}
+
+.card p{
+  text-align: center;
+  display: inline-block;
+  color: #000000;
+}
+
+/*media query nosotros*/
+@media(max-width: 1050px){
+  
+  .nosotros-title{
+    padding-right: 100px;
+  }
+  
+  .row-card{
+    gap: 15px;
+    padding: 10px;
+    display: block;
+  }
+}
+
+@media(max-width: 768px){
+  
+  .nosotros-title{
+    padding-right: 100px;
+  }
+  
+  .row-card{
+    gap: 15px;
+    padding: 10px;
+    display: block;
+  }
+}
+
+/*_____________________________________________CARRITO__DE__COMPRAS____________________________________*/
+
+.cart{
+  margin: 0;
+  padding: 20px;
+  background-color: #fff;
+  height: auto;
+
+}
+
+.total{
+
+  float: right;
+  padding: 20px;
+  margin: 0px;
+}
+
+hr{
+  background-color: black;
+  height: 5px;
+  border: none;
+}
+
+.linea{
+  background-color: black;
+  height: 5px;
+  border: none;
+  
+}
+
+.cart-row{
+  display: grid;
+  grid-template-columns: 500px 300px;
+  grid-template-rows: auto;
+  margin: 10px;
+  gap: 20px;
+  
+}
+.item1{
+  grid-area: item1;
+}
+
+.item2{
+  grid-area: item2 / item1;
+}
+.producto-total{
+  background-color: #57DFB7;
+  width: 300px;
+}
+
+.producto{
+  background-color: #aa4141;
+  width: 400px;
+  box-shadow: 0px 0px 8px 0px #220f0f;
+  border-radius: 5px;
+
+}
+
+
+.cart-row .add-remove{
+border: #000000;
+}
+
+.carrito-image{
+  width: 20%;
+  object-fit: fill;
+}
+
+/*_________________________________________________CONTACTO___________________________________________*/
+
+.contacto {
+  background: #ffffff;
+  margin: 0;
+  padding-left: 10px;
+  height: 992px;
+}
+        
+.contacto-title h2 {
+  color: #110101;
+  font-size: 45px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  border-bottom: 5px solid #0d6efd;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.contacto-title p {
+  color: #000000;
+  margin-bottom: 50px;
+  margin-right: 200px;
+  font-size: 20px;
+  display: inline-block;
+  text-align: left;
+}   
+
+
+.form-contacto li{
+  list-style: none;
+  margin-bottom: 15px;
+  padding:5px 0;
+}
+
+.form-contacto li>label{
+ font-size: 1rem;
+ margin-top: -10px;
+ padding-right: 20px;
+}
+
+.form-contacto input{
+  display: block;
+  font-size: 15px;
+  height: 30px;
+}
+.form-contacto .input-contacto{
+  background: #dadbf8f6;
+  width: 300px;
+  border: none;
+}
+
+.form-contacto li>.input-asunto{
+  background: #dadbf8f6;
+  width: 400px;
+  border: none;
+  height: 30px;
+}
+
+.form-contacto li>.input-comentario{
+  background: #dadbf8f6;
+  width: 420px;
+  border: none;
+  font-size: 15px;
+  min-height: 200px;
+}
+
+.contacto .contacto-button{
+  background-color: #3a3a3a;
+  color:#ffffff;
+  border: none;
+  font-size: 20px;
+  margin-top: 60px;
+}
+
+.contacto .contacto-button:hover{
+  background-color: #57DFB7;
+  color: #000000;
+}

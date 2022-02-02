@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/grid.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <script defer src="{% static 'core/js/main.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="header">
+            <div class="header-top">
+                <div class="header-top-logo">
+                    <a href="#"><img src="{% static 'core/images/SnakeLogo.png' %}" alt="logo" class="logo"></a>
+                </div>
+                <div class="header-top-loguin">
+                    <ul class="header-top-loguin-ul">
+                        {% if user.is_authenticated %}
+                            <li class="header-top-loguin-ul-li">
+                                <button class="header-top-loguin-ul-li-button">
+                                    <a href="{% url 'salir' %}" class="header-top-loguin-ul-li-link">Salir</a>
+                                </button>
+                            </li>
+                            <li class="header-top-loguin-ul-li">
+                                <a href="#" class="header-top-loguin-ul-li-carrito"><span class="header-top-loguin-ul-li-span" id="cartCount">0</span><i class="bi bi-cart3"></i></a>
+                            </li>
+                        {% else %}
+                            <li class="header-top-loguin-ul-li">
+                                <button class="header-top-loguin-ul-li-button">
+                                    <a href="{% url 'entrar' %}" class="header-top-loguin-ul-li-link">Entrar</a>
+                                </button>
+                            </li>
+                            <li class="header-top-loguin-ul-li">
+                                <button class="header-top-loguin-ul-li-button">
+                                    <a href="{% url 'registro' %}" class="header-top-loguin-ul-li-link">Registrar</a>
+                                </button>
+                            </li>
+                            <li class="header-top-loguin-ul-li">
+                                <a href="{% url 'carrito' %}" class="header-top-loguin-ul-li-carrito"><span class="header-top-loguin-ul-li-span" id="cartCount">0</span><i class="bi bi-cart3"></i></a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>    
+            </div>
+            <div class="div">
+                <nav class="div-nav">
+                    <span class="div-nav-button">
+                        <i class="bi bi-list"></i>
+                    </span>
+                    <ul class="div-nav-menu">
+                        <li class="div-nav-menu-item"><a href="{% url 'index' %}" class="div-nav-menu-link">Home</a></li>
+                        <li class="div-nav-menu-item container-submenu">
+                            <a href="#" class="div-nav-menu-link">Categoria<i class="bi bi-chevron-down"></i></a>
+                            <ul class="div-nav-menu submenu">
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Auriculares</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Almacenamiento</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Memorias RAM</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Mother</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Mouse</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Placas de Video</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#}" class="submenu-link">Procesadores</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Teclados</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Sillas</a></li>
+                            </ul>
+                        </li>
+                        <li class="div-nav-menu-item"><a href="{% url 'nosotros_de' %}" class="div-nav-menu-link">Nosotros</a></li>
+                        <li class="div-nav-menu-item"><a href="{% url 'contacto' %}"  class="div-nav-menu-link">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--Galeria-->
+        {% block content %}
+        <main class="galeria">
+            <div class="gal-grid">
+                {% for product in products %}
+                <div class="gal">
+                    <div class="gal-title">
+                        <h3>{{ product.name }}</h3>
+                    </div>
+                    <div class="gal-producto">
+                    <a href="{% url 'vista_producto' product_id=product.id %}" class="gal-link">
+                        <img src="{{ product.imageURL }}" alt="foto-galeria" class="gal-image">
+                    </a>
+                    </div>
+                    <div class="gal-price">
+                        <h4>$ {{ product.price }}</h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <nav class="nav-paginacion">
+                <ul class="paginacion">
+                  <li class="page-item"><a class="page-link" href="#"><span>&laquo;</span> Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="{% url 'index' %}"> 1 </a></li>
+                  <li class="page-item"><a class="page-link" href="{% url 'galeria_dos' %}"> 2 </a></li>
+                  <li class="page-item active"><a class="page-link" href="#"> 3 </a></li>
+                  <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next <span>&raquo;</span></a></li>
+                </ul>
+              </nav>
+        </main>
+        {% endblock %}
+        <div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="fila">
+                        <div class="footer-col">
+                            <div>
+                                <h3>Soporte al Cliente</h3>
+                                <p >Buenos Aires - av colon 1500</p>
+                                <p>Tel: +54 3844-54554</p>
+                                <p>Email: snakeitsolution@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Acerca de la Tienda</h4>
+                            <ul class="footer-col-ul">
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Home</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Nosotros</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Servicios</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Privacidad</a></li>
+                            </ul>
+                        </div>      
+                        <div class="footer-col">
+                          <h4>Nuestros Servicios</h4>
+                            <ul class="footer-col-ul">
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Pagos</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Orden de Envio</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Cambio y devoluciones</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Delivery</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Terminos y condiciones</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Suscribite para mas información</h4>
+                            <form action="" method="post"><input class="footer-col-email" type="email" name="email" placeholder="@email" /><input class="footer-col-s" type="submit" value="Suscríbete" /></form>
+                            <div class="footer-col-social">
+                                <a class="footer-col-redes" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                                <a class="footer-col-redes" href="https://twitter.com/home?lang=es"><i class="bi bi-twitter"></i></a>
+                                <a class="footer-col-redes" href="https://www.instagram.com/?hl=es"><i class="bi bi-instagram"></i></i></a>
+                                <a class="footer-col-redes" href="https://www.linkedin.com/feed/"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-botton">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer-copyright">
+                                <p class="footer-p">&copy; Copyright SnakeItSolutions. All Rights Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

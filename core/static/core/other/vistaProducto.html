@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/core/templates/core/grid.css">
+    <link rel="stylesheet" href="/core/templates/core/style.css">
+    <script defer src="/core/templates/core/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Document</title>
+    <style>
+        .cart{
+            padding-top: 30px;
+            background-color: #fff;
+            display: grid;
+            height: 500px;
+        }
+        
+        .cart .row{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: left;
+            margin-right: 50px;
+            text-align:left
+        }
+        
+        .row h2{
+            position: absolute;
+        }
+
+        .row p{
+            margin-top: 60px;
+        }
+
+        .row h3{
+
+            margin-top: 300px;
+            position:absolute;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        .row button{
+            position: absolute;
+            margin-top: 300px;
+            margin-left: 250px;
+
+            background-color: #F35361;
+            color: #fff;
+            height: 50px;
+            width: 150px;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        .row button:hover{
+            background-color: #F02D3D;
+        }
+
+        @media(max-width: 1050px){
+            .row img{
+                width: 400px;
+                height: 400px;
+            }
+
+            .cart .row{
+                height: 600px;
+            }
+
+            .row h3{
+                margin-top: 400px;
+                font-size: 20px;
+                margin-left: 20px;
+            }
+
+            .row button{
+                margin-top: 400px;
+                margin-left: 200px;
+            } 
+        }    
+        
+        @media(max-width: 768px){
+            .row img{
+                width: 400px;
+                height: 300px;
+            }
+
+            .cart{
+                padding: 10px;
+                margin: 0;
+                background-color: #fff;
+                display: grid;
+                height: 700px;
+            }
+        
+            .cart .row{
+                flex-direction:column;
+            }
+
+            .row p{
+                text-align:justify;
+                margin-right: 20px;
+            }
+
+            .row h3{
+                position:absolute;
+                margin-top: 300px;
+                font-size: 20px;
+                margin-left: 20px;
+            }
+
+            .row button{
+                margin-top: 300px;
+                margin-left: 200px;
+                height: 40px;
+                font-size: 18px;
+            } 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="header">
+            <div class="header-top">
+                <div class="header-top-logo">
+                    <a href="#"><img src="/imagenes/SnakeLogo.png" alt="logo" class="logo"></a>
+                </div>
+                <div class="header-top-loguin">
+                    <ul class="header-top-loguin-ul">
+                        <li class="header-top-loguin-ul-li"><button class="header-top-loguin-ul-li-button"><a href="/other/loguin.html" class="header-top-loguin-ul-li-link">Entrar</a></button></li>
+                        <li class="header-top-loguin-ul-li"><button class="header-top-loguin-ul-li-button"><a href="#" class="header-top-loguin-ul-li-link">Registrar</a></button></li>
+                        <li class="header-top-loguin-ul-li"><a href="#" class="header-top-loguin-ul-li-carrito"><span class="header-top-loguin-ul-li-span" id="cartCount">0</span><i class="bi bi-cart3"></i></a></li>
+                    </ul>
+                </div>    
+            </div>
+            <div class="div">
+                <nav class="div-nav">
+                    <span class="div-nav-button">
+                        <i class="bi bi-list"></i>
+                    </span>
+                    <ul class="div-nav-menu">
+                        <li class="div-nav-menu-item"><a href="#" class="div-nav-menu-link">Home</a></li>
+                        <li class="div-nav-menu-item container-submenu">
+                            <a href="#" class="div-nav-menu-link">Categoria <i class="bi bi-chevron-down"></i></a>
+                            <ul class="div-nav-menu submenu">
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Auriculares</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Almacenamiento</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Equipos Armados</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Memorias RAM</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Mother</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Mouse</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Placas de Video</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Procesadores</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Teclados</a></li>
+                                <li class="div-nav-menu-item submenu-item"><a href="#" class="submenu-link">Sillas</a></li>
+                            </ul>
+                        </li>
+                        <li class="div-nav-menu-item"><a href="#" class="div-nav-menu-link">Nosotros</a></li>
+                        <li class="div-nav-menu-item"><a href="/other/contacto.html" class="div-nav-menu-link">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--carrito-->
+        <main class="cart">
+            <div class="cart-container">
+                <div class="row">
+                    <div class="row">
+                        <img src="/imagenes/Galeria/mouse.jpg" alt="mouse">
+                    </div>
+                    <div class="row">
+                        <h2>Mouse nkb</h2>
+                        <P><strong> Descripcion del producto: </strong>Logitech diseña productos y experiencias que ocupan un lugar cotidiano en la vida de las personas, poniendo foco en la innovación y la calidad. Su objetivo es crear momentos verdaderamente únicos y significativos para sus usuarios. Los mouses Logitech se adaptan a la forma de tu mano para proporcionarte horas de comodidad. Sin necesidad de mover el brazo para deslizar el cursor, tu mano se fatigará menos. Son ideales para cualquier espacio de trabajo y quienes tienen la mesa llena de diversos objetos.</P>
+                        <h3>Precio $ 2800</h3><button class="buttoncart" id="agregar" onclick="addCarrito()">Agregar <i class="bi bi-cart3"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="fila">
+                        <div class="footer-col">
+                            <div>
+                                <h3>Soporte al Cliente</h3>
+                                <p >Buenos Aires - av colon 1500</p>
+                                <p>Tel: +54 3844-54554</p>
+                                <p>Email: snakeitsolution@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Acerca de la Tienda</h4>
+                            <ul class="footer-col-ul">
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Home</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Nosotros</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Servicios</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Privacidad</a></li>
+                            </ul>
+                        </div>      
+                        <div class="footer-col">
+                          <h4>Nuestros Servicios</h4>
+                            <ul class="footer-col-ul">
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Pagos</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Orden de Envio</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Cambio y devoluciones</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Delivery</a></li>
+                              <li><i class="footer-col-item"></i> <a class="footer-col-link" href="#">Terminos y condiciones</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Suscribite para mas información</h4>
+                            <form action="" method="post"><input class="footer-col-email" type="email" name="email" placeholder="@email" /><input class="footer-col-s" type="submit" value="Suscríbete" /></form>
+                            <div class="footer-col-social">
+                                <a class="footer-col-redes" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                                <a class="footer-col-redes" href="https://twitter.com/home?lang=es"><i class="bi bi-twitter"></i></a>
+                                <a class="footer-col-redes" href="https://www.instagram.com/?hl=es"><i class="bi bi-instagram"></i></i></a>
+                                <a class="footer-col-redes" href="https://www.linkedin.com/feed/"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-botton">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer-copyright">
+                                <p class="footer-p">&copy; Copyright SnakeItSolutions. All Rights Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

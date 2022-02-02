@@ -1,0 +1,22 @@
+{% extends "core/index.html" %}
+{% load static %}
+{% block content %}
+<main class="main-login">
+    <article>
+        <div class="box-login">
+            <h2>Iniciar Sesión</h2>
+            <form method="POST" class="form-login">
+                {% csrf_token %}
+                {{ form.as_ul}}
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">× {{ message }}</a>
+                    </div>
+                 {% endfor %}
+                <input type="submit" name="Entrar" value="Entrar">
+          </form>
+        </div>
+    </article>
+</main> 
+{% endblock %}
+        

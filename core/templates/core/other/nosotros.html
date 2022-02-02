@@ -1,0 +1,58 @@
+{% extends "core/index.html" %}
+{% load static %}
+{% block content %}
+<main class="nosotros">
+    <div class="nosotros-title">
+        <h2>Snake IT Solutions</h2>
+        <p> Somos una empresa lider con mas de 15 años en el mercado informatico y con 9 sucursales distribuidas en todo el país, ofreciendo los mejores productos y servicios a un muy buen precio calidad. Contamos con un equipo profesional para el armado y personalizacion de equipos de alta gama. Tenemos el mejor servicio de envio en 24hs</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum voluptatem fugiat eum nemo modi. Delectus tempora distinctio, repudiandae earum hic excepturi commodi libero quaerat natus, veniam qui aliquam cumque ipsam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At provident dolores consectetur necessitatibus debitis voluptates sequi ab, laboriosam exercitationem eveniet et unde sint. Voluptate quos delectus eum modi facere vero!</p>
+        <p>A continuacion presentamos a nuestro equipo de colaboradores:</p>
+    </div>
+    <div class="row-card">
+        <div class="card item1">
+            <div class="card-foto">
+                <img src="{% static 'core/images/alumnos/matiasmiño.png' %}" alt="">
+            </div>
+            <h5>Matias Miño</h5>
+            <p>Estudiante de Digit@lers, su pasión es la programacion y los videos juegos.</p>
+        </div>
+        <div class="card item2">
+            <div class="card-foto">
+                <img src="{% static 'core/images/alumnos/lucianopueyo.png' %}" alt="">
+            </div>
+            <h5>Luciano Pueyo</h5>
+            <p>Manager Digit@lers, Analista de sistemas </p>
+        </div>
+        <div class="card item3">
+            <div class="card-foto">
+                <img src="{% static 'core/images/alumnos/fotoedit.png' %}" alt="">
+            </div>
+            <h5>Rubén I. Sarco</h5>
+            <p>Estudiante de Digit@lers, su hobby es ir al gimansio y la programación</p>
+        </div>
+        <div class="card item4">
+            <div class="card-foto">
+                <img src="{% static 'core/images/alumnos/carlosbazan.png' %}" alt="">
+            </div>
+            <h5>Carlos Bazan</h5>
+            <p>Estudiante de Digit@lers, en su tiempo libre le gusta tomar café y escuchar música</p>
+        </div>
+        <div class="card item5">
+            <div class="card-foto">
+                <img src="{% static 'core/images/alumnos/lucas.png' %}" alt="Pupa">
+            </div>
+            <h5>Lucas</h5>
+            <p>Estudiante de Digit@lers,</p>
+        </div>
+        <div class="card item6">
+            <div class="card-foto">
+                <img src="{% static 'core/images/alumnos/pupa.png' %}" alt="Luca">
+            </div>
+            <h5>pupa</h5>
+            <p>Estudiante de Digit@lers,</p>
+        </div>
+    </div>
+</main>
+{% endblock %}
+        

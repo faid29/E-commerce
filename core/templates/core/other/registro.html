@@ -1,0 +1,18 @@
+{% extends "core/index.html" %}
+{% load static %}
+{% block content %}
+<main class="main-register">
+    <article>
+        <div class="box-register">
+            <h2>Nuevo Usuario</h2>
+            <p>Registrate y sé parte de nuestra tienda online</p>
+            <form method="POST" class="box-form">
+                {% csrf_token %}
+                {{ form.as_ul}}
+                <input type="submit" class="button-register" value="Registrar">
+            </form>
+        </div>
+    </article>
+
+</main> 
+{% endblock %}

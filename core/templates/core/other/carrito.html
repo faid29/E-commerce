@@ -1,0 +1,35 @@
+{% extends "core/index.html" %}
+{% load static%}
+{% block content %}
+<!--_________________________________________carrito________________________________________________________________-->
+    <main class="cart">
+        <div class="cart-row">
+            <div class="producto-total item1">
+                <div class="cart-title">
+                    <h2>Carrito de compras</h2>
+                    <p>Estos son los productos que seleccionaste para la compra</p>
+                </div>
+                <section class="total">
+                    <h2>Finaliza la compra</h2>
+                    <hr>
+                    <hr class="linea">
+                    <div class="total-precio">
+                        <h3>TOTAL con evio</h3>
+                    </div>
+                </section>
+            </div>
+    {% for product in products %} 
+            <div class="producto">
+                <div class="producto-imagen item2">
+                    <img src="{{ product.imageURL }} " class="carrito-image" alt="producto1">
+                </div>
+                <div class="producto-button">
+                    <button class="add"><i class="bi bi-plus-square"></i></button>
+                    <button class="min"><i class="bi bi-dash-square"></i></button>
+                    <button class="remove"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </main>
+{% endblock %}

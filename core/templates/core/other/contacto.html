@@ -1,0 +1,28 @@
+{% extends "core/index.html" %}
+{% load static%}
+{% block content %}
+<main>
+    <section class="contacto">
+        <div class="container">
+            <div class="contacto-row">
+                <div class="col">
+                    <div class="contacto-title">
+                        <h2>Contactanos</h2>
+                        <h3>Dejános tu mensaje</h3>
+                        <p>Por cualquier duda o sugerencia nuestro equipo de Snake It Solutions se estará conmunicando de inmediato. Muchas gracias.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form method="POST" class="form-contacto">
+                        {% csrf_token %}
+                        {{formulario.as_ul}}
+                        <input type="submit" value="Enviar" class="contacto-button">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

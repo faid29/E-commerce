@@ -1,0 +1,21 @@
+{% extends "core/index.html" %}
+{% load static %}
+{% block content %}
+        <!--carrito-->
+        <main class="carrito">
+            <div class="carrito-container">
+                {% for product in products %}
+                <div class="carrito-row">
+                    <div class="row-foto">
+                        <img src="{{ product.imageURL }}" alt="foto-vista" class="foto-detalle">
+                    </div>
+                    <div class="row">
+                        <h2>{{ product.name }}</h2>
+                        <P class="p-cart"><strong> Descripcion del producto: </strong>{{ product.description }}</P>
+                        <h3>Precio $ {{ product.price }}</h3><button class="buttoncart" id="agregar" onclick="addCarrito()">Agregar <i class="bi bi-cart3"></i></button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+{% endblock %}
